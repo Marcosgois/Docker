@@ -14,7 +14,6 @@ RUN docker-php-ext-install mysqli pdo pdo_mysql
 RUN docker-php-ext-enable mysqli
 RUN docker-php-ext-enable pdo
 RUN docker-php-ext-enable pdo_mysql
-RUN docker-php-ext-enable gd
 RUN apt-get -y install --fix-missing zip unzip
 RUN apt-get -y install --fix-missing git
 
