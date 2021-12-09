@@ -36,7 +36,7 @@ services:
         links:
           - codeigniter4_mysql
         volumes:
-          - shared-content:/var/www/html
+          - shared-content:/var/www/html/codeigniter4
          # - ./localfolder/www:/var/www/
 
 #--------------------------------------------------------------------------#
