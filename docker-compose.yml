@@ -74,3 +74,6 @@ services:
           - 81:80
         volumes:
           - ./localfolder/sessions:/sessions
+
+volumes:
+  static-content:
