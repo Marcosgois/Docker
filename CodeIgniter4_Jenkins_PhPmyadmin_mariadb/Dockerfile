@@ -71,3 +71,5 @@ EXPOSE 80
 VOLUME ["/var/www/html", "/var/log/apache2", "/etc/apache2"]
 
 CMD ["bash", "/startScript.sh"]
+
+# http://code.visitanyplace.com/add-gd-library-with-jpg-support-extension-on-docker/ # Help with gd
