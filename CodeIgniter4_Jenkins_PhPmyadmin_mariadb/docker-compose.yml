@@ -35,7 +35,7 @@ services:
         - 50003:50000
       container_name: my-jenkins-3
       volumes:
-        - shared-content:/var/jenkins_home/workspace/jenkins-github-integretion-Consignado
+        - shared-content:/var/jenkins_home/workspace/jenkins-codeigniter4
         - ./localfolder/jenkins_data:/var/jenkins_home
         - ./localfolder/docker.sock:/var/run/docker.sock
 #--------------------------------------------------------------------------#
