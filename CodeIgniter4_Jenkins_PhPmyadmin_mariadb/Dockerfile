@@ -7,7 +7,23 @@ RUN apt-get upgrade -y
 
 RUN apt-get install --fix-missing -y libpq-dev
 RUN apt-get install --no-install-recommends -y libpq-dev
+<<<<<<< HEAD:Dockerfile
 RUN apt-get install -y libxml2-dev libbz2-dev zlib1g-dev libpng-dev
+=======
+RUN apt-get install -y \
+    sudo \
+    nano \
+    libxml2-dev \
+    libbz2-dev \
+    zlib1g-dev \
+    libicu-dev \
+    libpng-dev \
+    libjpeg-dev \
+    libmcrypt-dev \
+    libreadline-dev \
+    libfreetype6-dev
+    
+>>>>>>> af2fb75be5037113f8e390a2f42b0ad001c2041a:CodeIgniter4_Jenkins_PhPmyadmin_mariadb/Dockerfile
 RUN apt-get -y install libsqlite3-dev libsqlite3-0 mariadb-client curl exif ftp
 RUN docker-php-ext-install intl
 RUN docker-php-ext-install mysqli pdo pdo_mysql
@@ -18,6 +34,9 @@ RUN docker-php-ext-enable pdo_mysql
 RUN docker-php-ext-enable gd
 RUN apt-get -y install --fix-missing zip unzip
 RUN apt-get -y install --fix-missing git
+
+RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+    && docker-php-ext-install gd
 
 # Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
@@ -58,3 +77,5 @@ EXPOSE 80
 VOLUME ["/var/www/html", "/var/log/apache2", "/etc/apache2"]
 
 CMD ["bash", "/startScript.sh"]
+
+# http://code.visitanyplace.com/add-gd-library-with-jpg-support-extension-on-docker/ # Help with gd
