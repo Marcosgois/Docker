@@ -1,6 +1,6 @@
 FROM php:7.3-apache
 
-LABEL maintainer="Antonio Sanna <atsanna@tiscali.it>"
+LABEL maintainer="Marcos Gois <marcosvagois@outlook.com>"
 
 RUN apt-get update
 RUN apt-get upgrade -y
@@ -8,6 +8,7 @@ RUN apt-get upgrade -y
 RUN apt-get install --fix-missing -y libpq-dev
 RUN apt-get install --no-install-recommends -y libpq-dev
 RUN apt-get install -y libxml2-dev libbz2-dev zlib1g-dev libpng-dev
+
 RUN apt-get install -y \
     sudo \
     nano \
