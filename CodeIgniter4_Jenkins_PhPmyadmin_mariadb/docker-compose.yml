@@ -12,6 +12,7 @@ services:
 #        image: atsanna/codeigniter4:v4.1.5-php8.0
         build: ./
         container_name: 'codeigniter4'
+        restart: always
         ports:
           - 80:80
         links:
@@ -30,6 +31,7 @@ services:
       user: root
       links:
           - codeigniter4_mysql
+      restart: always
       ports:
         - 8083:8080
         - 50003:50000
@@ -51,6 +53,7 @@ services:
         volumes:
           - ./localfolder/mysql:/var/lib/mysql
           - ./localfolder/logs/mysql:/var/log/mysql
+        restart: always
         environment:
           MYSQL_ROOT_PASSWORD: rootpassword
           MYSQL_DATABASE: db_consig
@@ -64,6 +67,7 @@ services:
     codeigniter4_phpmyadmin:
         image: phpmyadmin/phpmyadmin:5.0.2
         container_name: 'codeigniter4_phpmyadmin'
+        restart: always
         links:
           - codeigniter4_mysql
         environment:
