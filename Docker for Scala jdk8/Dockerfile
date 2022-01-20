@@ -12,7 +12,7 @@ RUN curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E4
 RUN sudo chmod 644 /etc/apt/trusted.gpg.d/scalasbt-release.gpg
 RUN sudo apt-get update
 RUN sudo apt-get install sbt -y
-RUN sudo apt-get install build-essential curl file git -y
+RUN sudo apt-get install build-essential curl file git nano vim -y
 RUN sudo apt-get install unzip zip -y
 # To install SDKMAN
 RUN curl -s "https://get.sdkman.io?rcupdate=false" | bash
